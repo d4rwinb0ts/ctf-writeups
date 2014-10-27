@@ -1,3 +1,15 @@
+# Fluffy No More - Forensics 300
+
+**Description:**
+
+> OH NO WE'VE BEEN HACKED!!!!!! -- said the Eye Heart Fluffy Bunnies Blog owner. Life was grand for the fluff fanatic until one day the site's users started to get attacked! Apparently fluffy bunnies are not just a love of fun furry families but also furtive foreign governments. The notorious "Forgotten Freaks" hacking group was known to be targeting high powered politicians. Were the cute bunnies the next in their long list of conquests!??
+>
+> Well... The fluff needs your stuff. I've pulled the logs from the server for you along with a backup of its database and configuration. Figure out what is going on!
+>
+> Written by brad_anton
+
+## Write-up
+
 So in the auth log there’s some interesting stuff
 ```
 Sep 17 19:18:11 ubuntu sudo:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu/CSAW2014-WordPress/var/log/apache2 ; USER=root ; COMMAND=/bin/mv access.log error.log other_vhosts_access.log /var/log/apache2/
