@@ -5,7 +5,6 @@
 
 > >netcat 54.154.191.231                                                                                       
 > M E N U
-> =======
 > 1. Show public keys
 > 2. Encrypt
 > 3. Solve challenge
@@ -13,7 +12,6 @@
 > Public Key(N): 22707716705395385903017779098328224417
 > 
 > M E N U                                                                                
-> =======                                                                                
 > 1. Show public keys                                                                    
 > 2. Encrypt                                                                             
 > 3. Solve challenge                                                                     
@@ -36,7 +34,6 @@ I used msieve to factor this:
 > prp19: 5557821748931214221
 
 M E N U
-=======
 1. Show public keys
 2. Encrypt
 3. Solve challenge
