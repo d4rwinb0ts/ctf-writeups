@@ -5,13 +5,13 @@ In this problem, you are given a python encryption program that takes plaintext 
 
 ###  Preliminary -- proof of work
 
-A proof of work is required to prevent brute-force / ddosing the service. you have to find a string with a server-provided nonce as a prefix with a sha1 ending in \0\0. 
+A proof of work is required to prevent brute-force / ddosing the service. you have to find a string with a server-provided nonce as a prefix with a sha1 ending in \0\0. We can just bruteforce this:
 
-def solve_pow(prefix):
-    for suffix in range(0,9999999):
-       text = prefix + ('%5d' % hex(suffix))
-       if hashlib.sha1(text).digest().endswith('\0\0'):
-       	  return text
+    def solve_pow(prefix):
+        for suffix in range(0,9999999):
+           text = prefix + ('%5d' % hex(suffix))
+               if hashlib.sha1(text).digest().endswith('\0\0'):
+       	          return text
 
 ### The LZW function
 
