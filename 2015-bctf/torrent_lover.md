@@ -71,8 +71,8 @@ From the output, I can see that the binary does a `strstr` so see if the argumen
 So we can't directly read the flag, but that's no big deal. We can just make a symlink to the flag.
 
 ```
-ln -s flag differnt_name
-ltrace out.bin flag
+ln -s flag different_name
+./out.bin different_name
 ```
 It works! Now let's do that on the server. I submit the following two urls:
 
